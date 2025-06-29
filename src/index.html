@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Battleship</title>
+  <style>
+    body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 2rem;
+    background: #f2f2f2;
+    text-align: center;
+    }
+
+    #info {
+    margin-bottom: 1rem;
+    }
+
+    .board-container {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    }
+
+    .board {
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(10, 30px);
+    gap: 2px;
+    background: #ccc;
+    padding: 5px;
+    border-radius: 8px;
+    width: max-content;
+    }
+
+    .cell {
+    width: 30px;
+    height: 30px;
+    background: white;
+    border: 1px solid #999;
+    box-sizing: border-box;
+    cursor: pointer;
+    }
+
+    .cell.ship {
+    background: gray;
+    }
+
+    .cell.hit {
+    background: red;
+    }
+
+    .cell.miss {
+    background: lightblue;
+    }
+  </style>
+</head>
+<body>
+  <h1>Battleship</h1>
+  <div id="info"></div>
+  <button id="toggle-orientation">Toggle Orientation</button>
+  <button id="start-game" disabled>Start Game</button>
+  <div class="board-container">
+  <div>
+    <h2>Your Board</h2>
+    <div id="player-board" class="board"></div>
+  </div>
+  <div>
+    <h2>Enemy Board</h2>
+    <div id="computer-board" class="board"></div>
+  </div>
+</div>
+  <div id="game-message"></div>
+  <button id="restart-button">Restart Game</button>
+  <script type="module" src="./ui.js"></script>
+</body>
+</html>
